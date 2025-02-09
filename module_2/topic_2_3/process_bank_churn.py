@@ -80,7 +80,7 @@ def scale_numeric_features(X_train: pd.DataFrame, X_val: pd.DataFrame, numeric_c
     Tuple[pd.DataFrame, pd.DataFrame, MinMaxScaler]:
         Scaled training and validation data, along with the scaler instance.
     """
-    scaler = StandardScaler()
+    scaler = MinMaxScaler()
     scaler.fit(X_train[numeric_cols])
 
     X_train[numeric_cols] = scaler.transform(X_train[numeric_cols])
